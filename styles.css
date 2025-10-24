@@ -1,5 +1,5 @@
 body {
-  background-color: gray;
+  background-color: black;
 }
 
 #Div {
@@ -20,32 +20,26 @@ body {
 }
 
 #HeadingA {
-  color: white;
+  color: rgb(17, 17, 17);
   
 }
-#HeadingA:hover {
-  color: darkblue;
-}
-
 
 #HeadingB {
-  color: darkblue;
+  color: rgb(17, 17, 17);
   
 }
-#HeadingB:hover {
-  color: white;
-}
+
 
 #P {
   font-size: 19px;
   font-family: Impact, Arial;
-  color: white;
+  color: rgb(17, 17, 17);
 }
 
 #P2 {
   font-size: 19px;
   font-family: Impact, Arial;
-  color: white;
+  color: rgb(17, 17, 17);
   height: 20px;
   margin-left: 190px;
 }
@@ -69,7 +63,7 @@ body {
 .BtnText {
   color: white;
   font-size: 20px;
-  margin-left: 35px;
+  margin-left: 45px;
   margin-top: 5px;
 
 }
@@ -82,3 +76,4 @@ body {
   background-color: red;
   margin-top: 20px;
 }
+
