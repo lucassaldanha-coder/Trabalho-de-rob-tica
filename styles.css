@@ -50,22 +50,35 @@ body {
   margin-left: 190px;
 }
 
+.Row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+
 .Button {
   display: box;
   border: 2px solid gray;
   border-radius: 10px;
   height: 30px;
   width: 120px;
-  background-color: rgb(162, 0,255);
   justify-content: center;
-  margin-top: 20px;
   cursor: pointer;
 }
 
-#BtnText {
+.BtnText {
   color: white;
   font-size: 20px;
   margin-left: 35px;
   margin-top: 5px;
 
+}
+
+#Btn1 {
+  background-color: green;
+  margin-top: 20px;
+}
+#Btn2 {
+  background-color: red;
+  margin-top: 20px;
 }
