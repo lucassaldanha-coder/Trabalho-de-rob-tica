@@ -40,10 +40,17 @@ body {
   font-family: Impact, Arial;
   color: rgb(5, 5, 5);
   height: 20px;
-  margin-left: 190px;
+  margin-left: 240px;
+}
+#P3 {
+  font-size: 19px;
+  font-family: Impact, Arial;
+  color: rgb(5, 5, 5);
+  height: 20px;
+  margin-left: 170px;
 }
 
-#P3 {
+#P4 {
   font-size: 19px;
   font-family:Arial;
   color: white;
@@ -119,4 +126,8 @@ body {
   border-radius: 35px;
   padding: 0 5px;
   cursor: pointer;
+}
+
+#monitor {
+  margin-left: 535px;
 }
