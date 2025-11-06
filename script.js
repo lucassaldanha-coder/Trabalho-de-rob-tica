@@ -51,3 +51,4 @@ document.getElementById("GSearchButton").style.backgroundColor = "rgb(5, 5, 5)";
 document.getElementById("GSearchButton").style.borderColor = "rgb(5, 5, 5)";
 document.getElementById("GSearchButton").style.color = "rgb(5, 5, 5)";
 });
+
