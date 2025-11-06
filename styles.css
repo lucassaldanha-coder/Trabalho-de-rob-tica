@@ -16,6 +16,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
+  text-align: center;
 }
 
 #HeadingA {
@@ -40,14 +41,12 @@ body {
   font-family: Impact, Arial;
   color: rgb(5, 5, 5);
   height: 20px;
-  margin-left: 240px;
 }
 #P3 {
   font-size: 19px;
   font-family: Impact, Arial;
   color: rgb(5, 5, 5);
   height: 20px;
-  margin-left: 170px;
 }
 
 #P4 {
@@ -55,7 +54,6 @@ body {
   font-family:Arial;
   color: white;
   height: 20px;
-  margin-left: 260px;
   text-shadow: 0 0 10px #fff;
 }
 
@@ -128,6 +126,7 @@ body {
   cursor: pointer;
 }
 
-#monitor {
-  margin-left: 535px;
+Monitor {
+  display: flex;
+  justify-content: center;
 }
