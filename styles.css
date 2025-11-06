@@ -126,9 +126,10 @@ body {
   cursor: pointer;
 }
 
-Monitor {
+#Monitor {
   display: flex;
   justify-content: center;
 }
+
 
 
