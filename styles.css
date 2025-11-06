@@ -127,7 +127,8 @@ body {
 }
 
 Monitor {
-  display: box;
+  display: flex;
   justify-content: center;
 }
+
 
