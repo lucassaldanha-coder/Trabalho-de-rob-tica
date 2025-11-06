@@ -52,3 +52,45 @@ document.getElementById("GSearchButton").style.borderColor = "rgb(5, 5, 5)";
 document.getElementById("GSearchButton").style.color = "rgb(5, 5, 5)";
 });
 
+const rainbowColors = [
+    '#FF0000', // Red
+    '#FF7F00', // Orange
+    '#FFFF00', // Yellow
+    '#00FF00', // Green
+    '#0000FF', // Blue
+    '#4B0082', // Indigo
+    '#9400D3'  // Violet
+];
+
+let colorIndex = 0;
+document.getElementById('Btn3').addEventListener('click', function() {
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+    }
+    
+    intervalId = setInterval(() => {
+        // Get the current body element
+        const body = document.body;
+        
+        // Set the background color
+        body.style.backgroundColor = rainbowColors[colorIndex];
+        
+        // Move to the next color in the array. If it's the last one, loop back to 0.
+        colorIndex = (colorIndex + 1) % rainbowColors.length;
+        
+    }, 500); // Change speed here
+});
+
+//Button 4
+document.getElementById('Btn4').addEventListener('click', function() {
+    // 1. Stop the color cycling using the stored interval ID
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+        intervalId = null; // Clear the variable
+    }
+    
+    // 2. Set the background color to white
+    document.body.style.backgroundColor = 'white';
+});
+
+
