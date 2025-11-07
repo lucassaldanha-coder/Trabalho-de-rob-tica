@@ -97,6 +97,15 @@ body {
   margin-top: -10px;
 }
 
+#Btn3 {
+  background-color: blue;
+  margin-top: -10px;
+}
+#Btn4 {
+  background-color: blue;
+  margin-top: -10px;
+}
+
 #GSearch {
   margin-top: 20px;
   font-size: 19px;
@@ -131,6 +140,7 @@ body {
   justify-content: center;
   width: 100vw;
 }
+
 
 
 
