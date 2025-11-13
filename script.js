@@ -30,13 +30,20 @@ document.getElementById("Btn2").addEventListener("click", function() {
   document.body.style.backgroundColor = "black";
    document.getElementById("Div").style.backgroundColor = "black";
   
-//Make text black
+  // Stop RGB
+  if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null; 
+      console.log("Color cycling stopped.");
+  }
+
+// Make text black
 let elementsT = document.getElementsByClassName("Text");
 for (let i = 0; i < elementsT.length; i++) {
     elementsT[i].style.color = "rgb(5, 5, 5)";
 }
 
-//Add glow to BtnText
+// Add glow to BtnText
 let btntext = document.getElementsByClassName("BtnText");
 for (let j = 0; j < btntext.length; j++) {
   btntext[j].style.textShadow = "0 0 10px";
@@ -143,6 +150,5 @@ document.getElementById("GSearchButton").style.backgroundColor = "rgb(5, 5, 5)";
 document.getElementById("GSearchButton").style.borderColor = "rgb(5, 5, 5)";
 document.getElementById("GSearchButton").style.color = "rgb(5, 5, 5)";
 });
-
 
 
