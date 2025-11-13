@@ -2,10 +2,203 @@
 <html>
     <head>
         <title>Main</title>
-        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+              background-color: black;
+            }
+
+            #Div {
+              border: 4px solid white;
+              border-radius: 15px;
+              height: 340x;
+              background-color: black;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .Centered {
+              display: flex;
+              justify-content: center;
+              gap: 15px;
+              text-align: center;
+            }
+
+            #HeadingA {
+              color: rgb(5, 5, 5)
+              
+            }
+
+            #HeadingB {
+              color: rgb(5, 5, 5)
+              
+            }
+
+
+            #P {
+              font-size: 19px;
+              font-family: Impact, Arial;
+              color: rgb(5, 5, 5)
+            }
+
+            #P2 {
+              font-size: 19px;
+              font-family: Impact, Arial;
+              color: rgb(5, 5, 5);
+              height: 20px;
+            }
+            #P3 {
+              font-size: 19px;
+              font-family: Impact, Arial;
+              color: rgb(5, 5, 5);
+              height: 20px;
+            }
+
+            #P4 {
+              font-size: 19px;
+              font-family:Arial;
+              color: white;
+              height: 20px;
+              text-shadow: 0 0 10px #fff;
+            }
+
+            .Column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .Row {
+              display: flex;
+              flex-direction: row;
+              gap: 20px;
+            }
+
+            .Button {
+              display: box;
+              border: 2px solid gray;
+              border-radius: 10px;
+              height: 30px;
+              width: 120px;
+              justify-content: center;
+              cursor: pointer;
+            }
+
+            .BtnText {
+              color: white;
+              font-size: 20px;
+              margin-left: 45px;
+              margin-top: 5px;
+              text-shadow: 0 0 10px #fff;
+
+            }
+
+            #Btn1 {
+              background-color: green;
+              margin-top: -10px;
+            }
+            #Btn2 {
+              background-color: red;
+              margin-top: -10px;
+            }
+
+            #Btn3 {
+              background-color: blue;
+              margin-top: -10px;
+            }
+            #Btn4 {
+              background-color: blue;
+              margin-top: -10px;
+            }
+
+            #GSearch {
+              margin-top: 20px;
+              font-size: 19px;
+              font-family: Arial;
+              color: rgb(5, 5, 5);
+            }
+
+            #GSearchBar {
+              margin-top: 20px;
+              height: 35px;
+              width: 50vw;
+              border: 1px solid rgb(5, 5, 5);
+              background-color: rgb(5, 5, 5);
+              border-radius: 35px;
+              padding: 0 10px;
+            }
+
+            #GSearchButton {
+              margin-top: 10px;
+              height: 30px;
+              width: 120px;
+              border: 1px solid rgb(5, 5, 5);
+              background-color: rgb(5, 5, 5);
+              color: rgb(5, 5, 5);
+              border-radius: 35px;
+              padding: 0 5px;
+              cursor: pointer;
+            }
+
+            #Monitor {
+              display: flex;
+              justify-content: center;
+              width: 100vw;
+            }
+
+            /* NEW: Container to anchor the eyes to the image */
+            #EyeContainer {
+                position: relative;
+                width: 200px; /* Same as image width */
+                height: 150px; /* Same as image height */
+                margin: 20px auto; /* Center the container below the video */
+            }
+            
+            #trackingImage {
+                display: block;
+            }
+
+            .eye {
+              border: 2px solid black;
+              border-radius: 50%;
+              background-color: white;
+              width: 60px; 
+              height: 60px; 
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute; /* Positioned relative to #EyeContainer */
+              z-index: 20; 
+            }
+
+            .pupil {
+              border: 2px solid black;
+              background-color: black;
+              border-radius: 50%;
+              width: 15px; 
+              height: 15px; 
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              /* The base center transform */
+              transform: translate(-50%, -50%); 
+            }
+
+            /* Eye positions are now relative to the 200px x 150px image */
+            #eye1 {
+              top: 20px; 
+              left: 30px; 
+            }
+
+            #eye2 {
+              top: 20px;
+              left: 110px;
+            }
+        </style>
     </head>
+
     <body>
-        <div id="Div" class="Centered">  
+        <div id="Div" class="Centered">  
             <div class="Centered">
                 <h1 id="HeadingA" class="Text">Minha</h1>
                 <h1 id="HeadingB" class="Text">Página</h1>
@@ -24,7 +217,6 @@
                 <span id ="P4">Ligar luzes</span>
             </div>
             
-
             <div class="Row">
                 <div class ="Button" id="Btn1">
                     <h2 class="BtnText">On</h2>
@@ -57,7 +249,239 @@
                 <source src="WIN_20251105_13_01_33_Pro.mp4 type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-       </div>
-        <script src="script.js"></script>
+        </div>
+        
+        <!-- NEW CONTAINER: This ensures the absolute positioned eyes stay on the image -->
+        <div id="EyeContainer">
+            <img src="18b1601a-ac17-4940-9662-fbe5319e6e46_removalai_preview.png" id="trackingImage" width="200px" height="150px">
+            
+            <div class="eye" id="eye1">
+                <div class="pupil"></div>
+            </div>
+            <div class="eye" id="eye2">
+                <div class="pupil"></div>
+            </div>
+        </div>
+
+
+
+        <script>
+            //Button 1 code
+            document.getElementById("Btn1").addEventListener("click", function() {
+              document.body.style.backgroundColor = "white";
+              document.getElementById("Div").style.backgroundColor = "white";
+              
+              let elements = document.getElementsByClassName("Text");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.color = "rgb(5, 5, 5)";  
+            }
+
+              //Remove BtnText's glow
+            let btntext = document.getElementsByClassName("BtnText");
+            for (let j = 0; j < btntext.length; j++) {
+              btntext[j].style.textShadow = "0 0 0px";
+            }
+              
+            //Change search bar
+            document.getElementById("GSearchBar").style.backgroundColor = "white";
+            document.getElementById("GSearchBar").style.borderColor = "#ccc";
+
+            //Change search button
+            document.getElementById("GSearchButton").style.backgroundColor = "#17f";
+            document.getElementById("GSearchButton").style.borderColor = "#17f";
+            document.getElementById("GSearchButton").style.color = "white";
+            });
+
+
+            //Button 2 code
+            document.getElementById("Btn2").addEventListener("click", function() {
+              document.body.style.backgroundColor = "black";
+               document.getElementById("Div").style.backgroundColor = "black";
+              
+              // Stop RGB
+              if (intervalId !== null) {
+                  clearInterval(intervalId);
+                  intervalId = null; 
+                  console.log("Color cycling stopped.");
+              }
+
+            // Make text black
+            let elementsT = document.getElementsByClassName("Text");
+            for (let i = 0; i < elementsT.length; i++) {
+                elementsT[i].style.color = "rgb(5, 5, 5)";
+            }
+
+            // Add glow to BtnText
+            let btntext = document.getElementsByClassName("BtnText");
+            for (let j = 0; j < btntext.length; j++) {
+              btntext[j].style.textShadow = "0 0 10px";
+            }
+
+            //Change search bar
+            document.getElementById("GSearchBar").style.backgroundColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchBar").style.borderColor = "rgb(5, 5, 5)";
+
+            //Change search button
+            document.getElementById("GSearchButton").style.backgroundColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchButton").style.borderColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchButton").style.color = "rgb(5, 5, 5)";
+            });
+
+            // --- Global Variables for Scope and Control ---
+            const rainbowColors = [
+                '#FF0000', // Red
+                '#FF7F00', // Orange
+                '#FFFF00', // Yellow
+                '#00FF00', // Green
+                '#0000FF', // Blue
+                '#4B0082', // Indigo
+                '#9400D3'  // Violet
+            ];
+
+            let colorIndex = 0;
+            let intervalId = null; 
+
+            // Button 3 code
+            document.getElementById('Btn3').addEventListener('click', function() {
+                
+                if (intervalId !== null) {
+                    console.log("Color cycling is already active. Click ignored.");
+                    return; // Exit the function to prevent double-triggering
+                }
+                
+                intervalId = setInterval(() => {
+                    const body = document.body;
+                    body.style.backgroundColor = rainbowColors[colorIndex];
+                    // Ensure index wraps around to 0
+                    colorIndex = (colorIndex + 1) % rainbowColors.length;
+                    
+                }, 500); // Change speed here
+                
+                console.log("Color cycling started. Interval ID:", intervalId);
+              document.body.style.backgroundColor = "white";
+              document.getElementById("Div").style.backgroundColor = "white";
+              
+             let elements = document.getElementsByClassName("Text");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.color = "rgb(5, 5, 5)";  
+            }
+
+              //Remove BtnText's glow
+            let btntext = document.getElementsByClassName("BtnText");
+            for (let j = 0; j < btntext.length; j++) {
+              btntext[j].style.textShadow = "0 0 0px";
+            }
+              
+            //Change search bar
+            document.getElementById("GSearchBar").style.backgroundColor = "white";
+            document.getElementById("GSearchBar").style.borderColor = "#ccc";
+
+            //Change search button
+            document.getElementById("GSearchButton").style.backgroundColor = "#17f";
+            document.getElementById("GSearchButton").style.borderColor = "#17f";
+            document.getElementById("GSearchButton").style.color = "white";
+            });
+
+            // Button 4 code
+            document.getElementById('Btn4').addEventListener('click', function() {
+                
+                // 1. Stop the color cycling using the stored interval ID
+                if (intervalId !== null) {
+                    clearInterval(intervalId);
+                    intervalId = null; 
+                    console.log("Color cycling stopped.");
+                }
+
+                document.body.style.backgroundColor = 'black'; 
+                console.log("Background set to black.");
+              document.body.style.backgroundColor = "black";
+               document.getElementById("Div").style.backgroundColor = "black";
+              
+            //Make text black
+            let elementsT = document.getElementsByClassName("Text");
+            for (let i = 0; i < elementsT.length; i++) {
+                elementsT[i].style.color = "rgb(5, 5, 5)";
+            }
+
+            //Add glow to BtnText
+            let btntext = document.getElementsByClassName("BtnText");
+            for (let j = 0; j < btntext.length; j++) {
+              btntext[j].style.textShadow = "0 0 10px";
+            }
+
+            //Change search bar
+            document.getElementById("GSearchBar").style.backgroundColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchBar").style.borderColor = "rgb(5, 5, 5)";
+
+            //Change search button
+            document.getElementById("GSearchButton").style.backgroundColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchButton").style.borderColor = "rgb(5, 5, 5)";
+            document.getElementById("GSearchButton").style.color = "rgb(5, 5, 5)";
+            });
+
+
+            // The eye tracking variables and functions start here
+            const pupils = document.querySelectorAll('.pupil');
+            
+            // Max movement distance increased to make movement more visible
+            const maxPupilMove = 15; 
+
+            /**
+              * Calculates the new position of the pupil based on the mouse/touch position.
+              */
+            function eyeFollow(mouseX, mouseY) {
+                pupils.forEach(pupil => {
+                    // pupil.parentElement is the .eye socket
+                    const eyeContainer = pupil.parentElement;
+                    
+                    // 1. Find the center of the eye socket relative to the viewport
+                    const rect = eyeContainer.getBoundingClientRect();
+                    const eyeCenterX = rect.left + rect.width / 2;
+                    const eyeCenterY = rect.top + rect.height / 2;
+
+                    // 2. Calculate the difference (delta) between mouse and eye center
+                    const deltaX = mouseX - eyeCenterX;
+                    const deltaY = mouseY - eyeCenterY;
+
+                    // 3. Calculate the angle (in radians) to the mouse/touch point
+                    const angle = Math.atan2(deltaY, deltaX);
+
+                    // 4. Calculate the straight-line distance to the mouse
+                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                    
+                    // 5. Limit the distance the pupil can move so it stays inside the eye
+                    const moveDistance = Math.min(distance, maxPupilMove);
+
+                    // 6. Use the angle and limited distance to find the final pupil offset
+                    const offsetX = moveDistance * Math.cos(angle);
+                    const offsetY = moveDistance * Math.sin(angle);
+                    
+                    // 7. Apply the movement using CSS transform (translating from its centered starting point)
+                    pupil.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+                });
+            }
+
+            // Event listeners
+            document.addEventListener('mousemove', (e) => {
+                eyeFollow(e.clientX, e.clientY);
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    eyeFollow(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            });
+
+            // Initial positioning and setting up dark mode on load
+            window.onload = () => {
+                // Initial eye position toward the center of the screen
+                eyeFollow(window.innerWidth / 2, window.innerHeight / 2);
+            };
+
+            window.addEventListener('resize', () => {
+                // When resizing, the eye center changes, so re-center the pupils.
+                eyeFollow(window.innerWidth / 2, window.innerHeight / 2);
+            });
+        </script>
     </body>
 </html>
